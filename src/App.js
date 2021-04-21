@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import {AddOrEditEvent} from './component/AddOrEditEvent'
+import {EventList} from './component/EventList'
 
-function App() {
+const App =() => {
+  const mock =[
+    {
+        title:'1',
+        name:'1',
+        eventDate: '1990-1-1'
+    },
+    {
+        title:'2',
+        name:'k',
+        eventDate: '1990-1-1'
+    }
+]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AddOrEditEvent/>
+      <EventList items={mock}/>
     </div>
   );
 }
 
-export default App;
+export {App};
