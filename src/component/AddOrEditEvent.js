@@ -1,8 +1,8 @@
 import { props } from 'bluebird'
 // import Day from 'es-abstract/5/Day'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
-export const AddEvent =() =>{
+export const AddOrEditEvent =(props) =>{
     // let today = new Date().toLocaleDateString()
 
 const [event, setEvent] =useState({
@@ -22,6 +22,13 @@ const handleSubmit =(e)=>{
     console.log('newEvent', event)
     props.submit(event)
 }
+
+useEffect(()=>{
+    const eventEdit ={...props.event}
+    console.log('eventEdit', eventEdit)
+    setEvent(eventEdit)
+},[props.event])
+
 return(
 <div>
     <form onSubmit={handleSubmit}>
