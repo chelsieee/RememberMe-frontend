@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from 'axios'
 import {EventList} from './EventList'
 import { useHistory, useParams } from "react-router-dom";
+import {Link} from 'react-router-dom'
 
 export const ListContainer = () => {
   const [eventList, setEventList] = useState([]);
@@ -19,6 +20,10 @@ export const ListContainer = () => {
         console.log(data)
         refreshList();
       })
+  }
+
+  const handleEditEvent  =(e)=>{
+      history.replace(`/events/edit/${e.id}`)
   }
 
   useEffect(() => {
@@ -39,12 +44,18 @@ export const ListContainer = () => {
     });
   }
 
+
+
   return (
     <>
       <div>
+      <Link to ={'/events/add'}>
+            <button>New Event</button>
+        </Link>
         <EventList
           events={eventList}
           handleDelete={handleDeleteEvent}
+          handleEdit ={handleEditEvent}
        />
       </div>
     </>

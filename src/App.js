@@ -12,10 +12,10 @@ const App = () => {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/add">
+          <Route path="/events/add">
           <AddContainer/>
           </Route>
-          <Route path="/edit/:id">
+          <Route path="/events/edit/:id">
             <EditContainer />
           </Route>
           <Route path="/">
