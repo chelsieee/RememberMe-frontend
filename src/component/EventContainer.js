@@ -1,7 +1,0 @@
-const EventContainer =() =>{
-
-    return(
-       <>
-       </> 
-    )
-}

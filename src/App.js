@@ -1,26 +1,27 @@
-import './App.css';
-import {AddOrEditEvent} from './component/AddOrEditEvent'
-import {EventList} from './component/EventList'
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { AddOrEditEvent } from "./component/AddOrEditEvent";
+import { AddContainer } from "./component/AddContainer";
+import { EditContainer } from "./component/EditContainer";
+import { ListContainer } from "./component/ListContainer";
+import { EventList } from "./component/EventList";
 
-const App =() => {
-  const mock =[
-    {
-        title:'1',
-        name:'1',
-        eventDate: '1990-1-1'
-    },
-    {
-        title:'2',
-        name:'k',
-        eventDate: '1990-1-1'
-    }
-]
+const App = () => {
+  
   return (
     <div className="App">
-      <AddOrEditEvent/>
-      <EventList items={mock}/>
+      <Router>
+        <Switch>
+          <Route path="/edit/:id">
+            <EditContainer />
+          </Route>
+          <Route path="/">
+            <ListContainer />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
-}
+};
 
-export {App};
+export { App };
