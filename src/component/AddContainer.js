@@ -4,6 +4,7 @@ import { AddOrEditEvent } from "./AddOrEditEvent"
 import axios from 'axios'
 
 export const AddContainer =() =>{
+    const history=useHistory()
    
    const handleEventFormSubmit =(event)=>{
        console.log('addEvent', event)
@@ -14,7 +15,7 @@ export const AddContainer =() =>{
         }
        }).then((res)=>{
         console.log("post response:", res);
-        // history.replaceState('/events')
+        history.replace('/')
        })
 
    }
@@ -22,6 +23,7 @@ export const AddContainer =() =>{
     return(
        <>
        <div>
+
            <AddOrEditEvent submit={handleEventFormSubmit}/>
        </div>
        </> 

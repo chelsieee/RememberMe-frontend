@@ -2,6 +2,9 @@ import {Link} from 'react-router-dom'
 export const EventList = (props) => {
   
     return (
+        <div><Link to ={'/add'}>
+            <button>New Event</button>
+        </Link>
       <ul>
         {props.events.map((el, index) => (
           <li key={index}>
@@ -12,6 +15,7 @@ export const EventList = (props) => {
           </li>
         ))}
       </ul>
+      </div>
     );
   
 

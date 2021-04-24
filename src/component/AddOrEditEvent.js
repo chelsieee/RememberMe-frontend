@@ -11,7 +11,7 @@ const [event, setEvent] =useState({
     eventDate: ''
 })
 const handleChange =(e) =>{
-    console.log("e.target", e.target)
+
   let newEvent = {...event}
     newEvent[e.target.name] = e.target.value
     setEvent(newEvent)
