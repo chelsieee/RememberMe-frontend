@@ -17,13 +17,4 @@ export const EventList = (props) => {
       </ul>
       </div>
     );
-  
-
-//   return (
-//     <div>
-//       <div>
-//         <span>Good to see you</span>
-//       </div>
-//     </div>
-//   );
 };
