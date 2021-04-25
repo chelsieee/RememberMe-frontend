@@ -1,6 +1,5 @@
-import {useState} from 'react'
 import {useHistory} from 'react-router-dom'
-import { AddOrEditEvent } from "./AddOrEditEvent"
+import { AddOrEditEvent } from "../component/AddOrEditEvent"
 import axios from 'axios'
 
 export const AddContainer =() =>{
@@ -15,7 +14,7 @@ export const AddContainer =() =>{
         }
        }).then((res)=>{
         console.log("post response:", res);
-        history.replace('/')
+        history.replace('/events')
        })
 
    }

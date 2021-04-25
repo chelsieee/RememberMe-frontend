@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from 'axios'
-import {EventList} from './EventList'
+import {EventList} from '../component/EventList'
+import {LandingPage} from '../component/LandingPage'
 import { useHistory, useParams } from "react-router-dom";
-import {Link} from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
 
 export const ListContainer = () => {
   const [eventList, setEventList] = useState([]);
@@ -52,11 +53,16 @@ export const ListContainer = () => {
       <Link to ={'/events/add'}>
             <button>New Event</button>
         </Link>
+        <Route path ='/events'>
         <EventList
           events={eventList}
           handleDelete={handleDeleteEvent}
           handleEdit ={handleEditEvent}
        />
+        </Route>
+        <Route exact path='/'>
+       <LandingPage/>
+        </Route>
       </div>
     </>
   );

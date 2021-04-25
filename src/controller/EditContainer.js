@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import {useHistory, useParams} from 'react-router-dom'
-import { AddOrEditEvent } from "./AddOrEditEvent"
+import { AddOrEditEvent } from "../component/AddOrEditEvent"
 import axios from 'axios'
 
 export const EditContainer =() =>{
@@ -23,7 +23,7 @@ export const EditContainer =() =>{
         }
        }).then((res)=>{
         console.log("post response:", res.data);
-        history.replace('/')
+        history.replace('/events')
        })
 
    }
@@ -39,7 +39,7 @@ export const EditContainer =() =>{
         setEditEvent(res.data)
     })
 
-   },[])
+   },[params.id])
 
     return(
        <>

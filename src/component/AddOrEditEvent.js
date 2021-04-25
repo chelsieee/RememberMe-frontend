@@ -1,5 +1,3 @@
-import { props } from 'bluebird'
-// import Day from 'es-abstract/5/Day'
 import React, {useEffect, useState} from 'react'
 
 export const AddOrEditEvent =(props) =>{
