@@ -5,7 +5,7 @@ import {LandingPage} from '../component/LandingPage'
 import { useHistory, useParams } from "react-router-dom";
 import {Link, Route} from 'react-router-dom'
 
-export const ListContainer = () => {
+export const ListContainer = (props) => {
   const [eventList, setEventList] = useState([]);
   const history = useHistory();
   const params =useParams()
@@ -61,7 +61,7 @@ export const ListContainer = () => {
        />
         </Route>
         <Route exact path='/'>
-       <LandingPage/>
+       <LandingPage loginStatus={props.loginStatus} setLoginStatus={props.setLoginStatus} />
         </Route>
       </div>
     </>

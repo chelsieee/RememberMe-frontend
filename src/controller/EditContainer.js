@@ -19,7 +19,7 @@ export const EditContainer =() =>{
        axios.patch(`http://localhost:3000/api/events/${params.id}`, event, {
         "Access-Control-Allow-Credentials": true,
         headers:{
-            "token": "eyJhbGciOiJub25lIn0.Mg."
+            token: window.localStorage.getItem("token"),
         }
        }).then((res)=>{
         console.log("post response:", res.data);
@@ -32,7 +32,7 @@ export const EditContainer =() =>{
       axios.get(`http://localhost:3000/api/events/${params.id}`, {
         "Access-Control-Allow-Credentials": true,
         headers:{
-            "token": "eyJhbGciOiJub25lIn0.Mg."
+            'token':window.localStorage.getItem('token')
       }
     }).then ((res)=>{
         console.log(res)

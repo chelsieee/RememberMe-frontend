@@ -16,7 +16,6 @@ export const NewUser =(props)=>{
         let newUser ={...userState}
         newUser[e.target.name]=e.target.value
         setUserState(newUser)
-        console.log('newUser', newUser)
     }
 
     return (
@@ -31,8 +30,8 @@ export const NewUser =(props)=>{
                 <input type ='text' name ='email' value={userState.email} onChange={handleChange}/>
             </div>
             <div>
-                <label htmlFor ='password'> Password(6 characters minimum):</label>
-                <input type='password' name='password' value={userState.password} onChange={handleChange} minLength='6' required />
+                <label htmlFor ='password'> Password(5 characters minimum):</label>
+                <input type='password' name='password' value={userState.password} onChange={handleChange} minLength='5' required />
             </div>
             <input type ='submit' value ='sign in'/>
 
