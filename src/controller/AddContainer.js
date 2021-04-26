@@ -13,7 +13,7 @@ export const AddContainer =() =>{
             "token": "eyJhbGciOiJub25lIn0.Mg."
         }
        }).then((res)=>{
-        console.log("post response:", res);
+        console.log("addEvent response:", res);
         history.replace('/events')
        })
 
