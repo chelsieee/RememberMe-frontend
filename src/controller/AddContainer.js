@@ -1,4 +1,4 @@
-import {useHistory} from 'react-router-dom'
+import {useHistory, Link} from 'react-router-dom'
 import { AddOrEditEvent } from "../component/AddOrEditEvent"
 import axios from 'axios'
 
@@ -22,7 +22,6 @@ export const AddContainer =() =>{
     return(
        <>
        <div>
-
            <AddOrEditEvent submit={handleEventFormSubmit}/>
        </div>
        </> 

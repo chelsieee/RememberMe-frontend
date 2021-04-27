@@ -5,7 +5,9 @@ import { EditContainer } from "./controller/EditContainer";
 import { ListContainer } from "./controller/ListContainer";
 import { NewUserContainer } from "./controller/NewUserContainer";
 import { LoginContainer } from "./controller/LoginContainer";
+import {LandingPage} from './component/LandingPage'
 import { useEffect, useState } from "react";
+
 const App = () => {
   const [loginStatus, setLoginStatus] = useState({ isLoggin: false });
 
@@ -19,20 +21,23 @@ const App = () => {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/events/add">
+         {loginStatus.isLoggin && <Route path="/events/add">
             <AddContainer />
-          </Route>
-          <Route path="/events/edit/:id">
+          </Route>}
+          {loginStatus.isLoggin && <Route path="/events/edit/:id">
             <EditContainer />
-          </Route>
+          </Route>}
           <Route path="/users/new" >
             <NewUserContainer />
           </Route>
           <Route path="/users/login" >
-            <LoginContainer loginStatus={loginStatus} setLoginStatus={setLoginStatus}/>
+            <LoginContainer setLoginStatus={setLoginStatus}/>
+          </Route>
+          <Route path ='/events'>
+            <ListContainer />
           </Route>
           <Route path="/">
-            <ListContainer loginStatus={loginStatus} setLoginStatus={setLoginStatus}/>
+            <LandingPage setLoginStatus={setLoginStatus}/>
           </Route>
         </Switch>
       </Router>

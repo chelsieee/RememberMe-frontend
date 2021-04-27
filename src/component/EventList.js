@@ -1,6 +1,11 @@
 import moment from 'moment'
+import {Link} from 'react-router-dom'
 export const EventList = (props) => {  
     return (
+      <div>
+      <Link to ={'/events/add'}>
+      <button>New Event</button>
+    </Link>
         <div>
       <ul>
         {props.events.map((el, index) => (
@@ -11,6 +16,7 @@ export const EventList = (props) => {
           </li>
         ))}
       </ul>
+      </div>
       </div>
     );
 };

@@ -3,9 +3,9 @@ import axios from 'axios'
 import {EventList} from '../component/EventList'
 import {LandingPage} from '../component/LandingPage'
 import { useHistory, useParams } from "react-router-dom";
-import {Link, Route} from 'react-router-dom'
 
-export const ListContainer = (props) => {
+
+export const ListContainer = () => {
   const [eventList, setEventList] = useState([]);
   const history = useHistory();
   const params =useParams()
@@ -50,19 +50,13 @@ export const ListContainer = (props) => {
   return (
     <>
       <div>
-      <Link to ={'/events/add'}>
-            <button>New Event</button>
-        </Link>
-        <Route path ='/events'>
+   
         <EventList
           events={eventList}
           handleDelete={handleDeleteEvent}
           handleEdit ={handleEditEvent}
        />
-        </Route>
-        <Route exact path='/'>
-       <LandingPage loginStatus={props.loginStatus} setLoginStatus={props.setLoginStatus} />
-        </Route>
+  
       </div>
     </>
   );
