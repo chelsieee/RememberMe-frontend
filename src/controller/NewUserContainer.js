@@ -12,8 +12,11 @@ export const NewUserContainer = () => {
         "Access-Control-Allow-Credentials": true,
       })
       .then((res) => {
+        console.log(res)
         history.replace("/users/login");
-      });
+      }).catch((error)=>{
+        console.log(error.response.data.message)
+      })
   };
   return (
     <>
