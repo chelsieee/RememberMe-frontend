@@ -11,8 +11,9 @@ export const ListContainer = () => {
   const params =useParams()
   console.log(params)
 
-  const handleDeleteEvent = (event)=>{
-      axios.delete(`http://localhost:3000/api/events/${event.id}`,{
+  const handleDeleteEvent = (events)=>{
+    console.log('checkList for delete', events)
+     events.map((e)=>{axios.delete(`http://localhost:3000/api/events/${e}`,{
         "Access-Control-Allow-Credentials": true,
         headers: {
           'token':window.localStorage.getItem('token')
@@ -20,12 +21,13 @@ export const ListContainer = () => {
       }).then((data)=>{
         console.log(data)
         refreshList();
-      })
+      })})
+      
   }
 
-  const handleEditEvent  =(e)=>{
-      history.replace(`/events/edit/${e.id}`)
-  }
+  // const handleEditEvent  =(e)=>{
+  //     history.replace(`/events/edit/${e.id}`)
+  // }
 
   useEffect(() => {
     refreshList();
@@ -54,7 +56,6 @@ export const ListContainer = () => {
         <EventList
           events={eventList}
           handleDelete={handleDeleteEvent}
-          handleEdit ={handleEditEvent}
        />
   
       </div>
