@@ -33,9 +33,9 @@ const App = () => {
           <Route path="/users/login" >
             <LoginContainer setLoginStatus={setLoginStatus}/>
           </Route>
-          <Route path ='/events'>
+          {loginStatus.isLoggin && <Route path ='/events'>
             <ListContainer />
-          </Route>
+          </Route>}
           <Route path="/">
             <LandingPage setLoginStatus={setLoginStatus}/>
           </Route>
