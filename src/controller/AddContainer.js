@@ -1,6 +1,5 @@
-import {useState} from 'react'
-import {useHistory} from 'react-router-dom'
-import { AddOrEditEvent } from "./AddOrEditEvent"
+import {useHistory, Link} from 'react-router-dom'
+import { AddOrEditEvent } from "../component/AddOrEditEvent"
 import axios from 'axios'
 
 export const AddContainer =() =>{
@@ -11,11 +10,11 @@ export const AddContainer =() =>{
        axios.post("http://localhost:3000/api/events", event, {
         "Access-Control-Allow-Credentials": true,
         headers:{
-            "token": "eyJhbGciOiJub25lIn0.Mg."
+            "token": window.localStorage.getItem('token')
         }
        }).then((res)=>{
-        console.log("post response:", res);
-        history.replace('/')
+        console.log("addEvent response:", res);
+        history.replace('/events')
        })
 
    }
@@ -23,7 +22,6 @@ export const AddContainer =() =>{
     return(
        <>
        <div>
-
            <AddOrEditEvent submit={handleEventFormSubmit}/>
        </div>
        </> 
