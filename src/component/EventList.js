@@ -127,7 +127,7 @@ export const EventList = (props) => {
                 title="background image"
               />
               <FiCardContent className={classes.fiCardContent}>
-                <Typography gutterBottom variant="h7" component="h2">
+                <Typography gutterBottom variant="h6" component="h2">
                   Days Since
                 </Typography>
                 <Typography variant="body2" component="p">
@@ -139,7 +139,7 @@ export const EventList = (props) => {
                 <Typography variant="body2" component="p">
                   {testEvents[0].eventDate}
                 </Typography>
-                <Typography gutterBottom variant="h7" component="h2">
+                <Typography gutterBottom variant="h6" component="h2">
                   {testEvents[0].name}
                 </Typography>
               </FiCardContent>
@@ -149,40 +149,25 @@ export const EventList = (props) => {
       )}
       <Grid>
         {testEvents.map((el, index) => (
-      <List component="nav" className={classes.listRoot} aria-label="mailbox folders">
+      <List key ={index} component="nav" className={classes.listRoot} aria-label="mailbox folders">
       <ListItem button>
-        <ListItemAvatar>
-          <Avatar>
-            <ImageIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary={`${el.title} with ${el.name} for ${difBtwDays(el.eventDate)} days` } secondary={el.eventDate} third={difBtwDays(el.eventDate)} />
-      </ListItem>
-      <Divider variant="vocation" component="li" />
-    </List>))}
-      </Grid>
-       
-      {/* <div> 
-        <ul>
-          {testEvents.map((el, index) => (
-            <div key={el.id}>
-              <input
+        <ListItemAvatar  >
+          <Avatar >
+          <BeachAccessIcon  />
+          <input
                 type="checkbox"
                 id={el.id}
-                key={index}
+                key={el.id}
                 onClick={handleClick}
                 value={el.checked}
               />
-              <Link to={`/events/edit/${el.id}`}>
-                <span key={el.id}>
-                  Days Since {el.title} -{difBtwDays(el.eventDate)} days -with{" "}
-                  {el.name} -{el.eventDate}
-                </span>
-              </Link>
-            </div>
-          ))}
-        </ul>
-      </div> */}
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText  key={el.id} primary={`${el.title} with ${el.name} for ${difBtwDays(el.eventDate)} days` } secondary={el.eventDate} third={difBtwDays(el.eventDate)} />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+    </List>))}
+      </Grid>
     </div>
   );
 };
