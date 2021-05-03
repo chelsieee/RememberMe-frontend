@@ -1,12 +1,81 @@
 import moment from "moment";
+import { withStyles} from "@material-ui/core/styles";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import Box from "@material-ui/core/Box";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardMedia from "@material-ui/core/CardMedia";
+import { sizing } from "@material-ui/system";
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
+import ImageIcon from '@material-ui/icons/Image';
+import WorkIcon from '@material-ui/icons/Work';
+import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+import Divider from '@material-ui/core/Divider';
+import Grid from '@material-ui/core/Grid'
+import {theme} from '../material-ui/theme'
+
+import {
+  FiCard,
+  FiCardActionArea,
+  FiCardActions,
+  FiCardContent,
+  FiCardMedia,
+} from "../material-ui/FullImageCard";
+
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+  card: {
+    maxWidth: 461,
+  },
+  media: {
+    height: 461,
+  },
+  fiCardContent: {
+    color: "#ffffff",
+    backgroundColor: "rgba(0,0,0,.24)",
+  },
+  fiCardContentTextSecondary: {
+    color: "rgba(255,255,255,0.78)",
+  },
+  listRoot: {
+    width: '100%',
+    maxWidth: 360,
+    // backgroundColor: "#b2dfdb",
+    backgroundColor: theme.palette.background
+  }
+});
+
 export const EventList = (props) => {
+  const classes = useStyles();
+  const bull = <span className={classes.bullet}>•</span>;
   const [checkList, setCheckList] = useState([]);
   const testEvents = props.events.map((el) => {
     return { ...el, checked: false };
   });
-  console.log(testEvents)
+  console.log(testEvents);
 
   const handleClick = (e) => {
     console.log("element selected: ", e.target.value);
@@ -17,7 +86,6 @@ export const EventList = (props) => {
     }
 
     console.log("e.target.id", e.target.id);
-    // does this id exist in the list of ids to be deleted
     const findIndex = checkList.indexOf(e.target.id);
     console.log("findindex", findIndex);
 
@@ -43,16 +111,58 @@ export const EventList = (props) => {
   return (
     <div>
       <div>
-      <Link to={"/events/add"}>
-        <button>New Event</button>
-      </Link>
-      <button onClick={() => props.handleDelete(checkList)}>Delete</button>
-      </div> 
-     {testEvents[0] && <div key={testEvents[0].id}>
-            <span key={testEvents[0].id}> Days Since {testEvents[0].title} -{difBtwDays(testEvents[0].eventDate)} days -with{" "}
-                  {testEvents[0].name} -{testEvents[0].eventDate}</span> 
-      </div>}
-      <div> 
+        <Link to={"/events/add"}>
+          <button>New Event</button>
+        </Link>
+        <button onClick={() => props.handleDelete(checkList)}>Delete</button>
+      </div>
+      {testEvents[0] && (
+        <Box m={1} width={1 / 2} height="75%">
+          <FiCard className={classes.card}>
+            <FiCardActionArea>
+              <FiCardMedia
+                media="picture"
+                alt="sky"
+                image="https://images.unsplash.com/photo-1499980762202-04245017d5bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                title="background image"
+              />
+              <FiCardContent className={classes.fiCardContent}>
+                <Typography gutterBottom variant="h7" component="h2">
+                  Days Since
+                </Typography>
+                <Typography variant="body2" component="p">
+                  {testEvents[0].title}
+                </Typography>
+                <Typography gutterBottom variant="h1" component="h2">
+                  {difBtwDays(testEvents[0].eventDate)}
+                </Typography>
+                <Typography variant="body2" component="p">
+                  {testEvents[0].eventDate}
+                </Typography>
+                <Typography gutterBottom variant="h7" component="h2">
+                  {testEvents[0].name}
+                </Typography>
+              </FiCardContent>
+            </FiCardActionArea>
+          </FiCard>
+        </Box>
+      )}
+      <Grid>
+        {testEvents.map((el, index) => (
+      <List component="nav" className={classes.listRoot} aria-label="mailbox folders">
+      <ListItem button>
+        <ListItemAvatar>
+          <Avatar>
+            <ImageIcon />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText primary={`${el.title} with ${el.name} for ${difBtwDays(el.eventDate)} days` } secondary={el.eventDate} third={difBtwDays(el.eventDate)} />
+      </ListItem>
+      <Divider variant="vocation" component="li" />
+    </List>))}
+      </Grid>
+       
+      {/* <div> 
         <ul>
           {testEvents.map((el, index) => (
             <div key={el.id}>
@@ -72,7 +182,7 @@ export const EventList = (props) => {
             </div>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };
