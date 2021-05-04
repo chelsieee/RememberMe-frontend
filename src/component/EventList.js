@@ -1,5 +1,5 @@
 import moment from "moment";
-import { withStyles} from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import CardContent from "@material-ui/core/CardContent";
@@ -12,17 +12,21 @@ import Box from "@material-ui/core/Box";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
 import { sizing } from "@material-ui/system";
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
-import ImageIcon from '@material-ui/icons/Image';
-import WorkIcon from '@material-ui/icons/Work';
-import BeachAccessIcon from '@material-ui/icons/BeachAccess';
-import Divider from '@material-ui/core/Divider';
-import Grid from '@material-ui/core/Grid'
-import {theme} from '../material-ui/theme'
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import Avatar from "@material-ui/core/Avatar";
+import ImageIcon from "@material-ui/icons/Image";
+import WorkIcon from "@material-ui/icons/Work";
+import BeachAccessIcon from "@material-ui/icons/BeachAccess";
+import Divider from "@material-ui/core/Divider";
+import Grid from "@material-ui/core/Grid";
+import { theme } from "../material-ui/theme";
+import Icon from "@material-ui/core/Icon";
+import AddIcon from "@material-ui/icons/Add";
+import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 import {
   FiCard,
@@ -61,11 +65,11 @@ const useStyles = makeStyles({
     color: "rgba(255,255,255,0.78)",
   },
   listRoot: {
-    width: '100%',
+    width: "100%",
     maxWidth: 360,
     // backgroundColor: "#b2dfdb",
-    backgroundColor: theme.palette.background
-  }
+    backgroundColor: theme.palette.background,
+  },
 });
 
 export const EventList = (props) => {
@@ -112,9 +116,15 @@ export const EventList = (props) => {
     <div>
       <div>
         <Link to={"/events/add"}>
-          <button>New Event</button>
+          <IconButton>
+            <AddIcon />
+          </IconButton>
         </Link>
-        <button onClick={() => props.handleDelete(checkList)}>Delete</button>
+      </div>
+      <div>
+        <IconButton>
+          <DeleteIcon onClick={() => props.handleDelete(checkList)} />
+        </IconButton>
       </div>
       {testEvents[0] && (
         <Box m={1} width={1 / 2} height="75%">
@@ -149,24 +159,41 @@ export const EventList = (props) => {
       )}
       <Grid>
         {testEvents.map((el, index) => (
-      <List key ={index} component="nav" className={classes.listRoot} aria-label="mailbox folders">
-      <ListItem button>
-        <ListItemAvatar  >
-          <Avatar >
-          <BeachAccessIcon  />
-          <input
-                type="checkbox"
-                id={el.id}
+          
+          <List
+            key={index}
+            component="nav"
+            className={classes.listRoot}
+            aria-label="mailbox folders"
+          >
+            <ListItem button>
+              <ListItemAvatar>
+                <Avatar>
+                  <BeachAccessIcon />
+                  <input
+                    type="checkbox"
+                    id={el.id}
+                    key={el.id}
+                    onClick={handleClick}
+                    value={el.checked}
+                  />
+                </Avatar>
+              </ListItemAvatar>
+              <Link to={`/events/edit/${el.id}`}  style={{ textDecoration: 'none', color: "inherit" }}>
+              <ListItemText
                 key={el.id}
-                onClick={handleClick}
-                value={el.checked}
+                primary={`${el.title} with ${el.name} for ${difBtwDays(
+                  el.eventDate
+                )} days`}
+                secondary={el.eventDate}
+                third={difBtwDays(el.eventDate)}
               />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText  key={el.id} primary={`${el.title} with ${el.name} for ${difBtwDays(el.eventDate)} days` } secondary={el.eventDate} third={difBtwDays(el.eventDate)} />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-    </List>))}
+              </Link>
+            </ListItem>
+            <Divider variant="inset" component="li" />
+          </List>
+            
+        ))}
       </Grid>
     </div>
   );
