@@ -67,7 +67,6 @@ const useStyles = makeStyles({
   listRoot: {
     width: "100%",
     maxWidth: 360,
-    // backgroundColor: "#b2dfdb",
     backgroundColor: theme.palette.background,
   },
 });
@@ -141,7 +140,7 @@ export const EventList = (props) => {
                   Days Since
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {testEvents[0].title}
+                  {testEvents[`${testEvents.length-1}`].title}
                 </Typography>
                 <Typography gutterBottom variant="h1" component="h2">
                   {difBtwDays(testEvents[0].eventDate)}
