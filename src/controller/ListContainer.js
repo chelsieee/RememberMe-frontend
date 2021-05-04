@@ -49,14 +49,11 @@ export const ListContainer = () => {
 
   return (
     <>
-      <div>
-   
         <EventList
           events={eventList}
           handleDelete={handleDeleteEvent}
        />
-  
-      </div>
+
     </>
   );
 };

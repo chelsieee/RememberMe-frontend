@@ -46,7 +46,7 @@ const handleLogout =() =>{
 }
 
   return (
-    <div>
+    <div className="menu" >
       <IconButton
         aria-label="more"
         aria-controls="long-menu"

@@ -38,7 +38,7 @@ import {
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
+    // minWidth: 27,
   },
   bullet: {
     display: "inline-block",
@@ -52,7 +52,7 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
   card: {
-    maxWidth: 461,
+ 
   },
   media: {
     height: 461,
@@ -66,7 +66,7 @@ const useStyles = makeStyles({
   },
   listRoot: {
     width: "100%",
-    maxWidth: 360,
+    
     backgroundColor: theme.palette.background,
   },
 });
@@ -113,20 +113,18 @@ export const EventList = (props) => {
 
   return (
     <div>
-      <div>
+      <div className='buttons'>
         <Link to={"/events/add"}>
           <IconButton>
             <AddIcon />
           </IconButton>
         </Link>
-      </div>
-      <div>
         <IconButton>
           <DeleteIcon onClick={() => props.handleDelete(checkList)} />
         </IconButton>
       </div>
       {testEvents[0] && (
-        <Box m={1} width={1 / 2} height="75%">
+        <Box width="100%" height="75%" className="cardContainer">
           <FiCard className={classes.card}>
             <FiCardActionArea>
               <FiCardMedia

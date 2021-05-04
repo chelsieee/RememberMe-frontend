@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.menu{
+  position: fixed;
+  left: 0;
+}
+
+.buttons {
+  position:fixed;
+  right:0;
+}
+
+.cardContainer {
+  position: relative;
+    top: -10px;
+    z-index: -1;
+}
