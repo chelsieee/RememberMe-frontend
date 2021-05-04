@@ -52,7 +52,7 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
   card: {
- 
+  
   },
   media: {
     height: 461,
@@ -141,13 +141,13 @@ export const EventList = (props) => {
                   {testEvents[`${testEvents.length-1}`].title}
                 </Typography>
                 <Typography gutterBottom variant="h1" component="h2">
-                  {difBtwDays(testEvents[0].eventDate)}
+                  {difBtwDays(testEvents[`${testEvents.length-1}`].eventDate)}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {testEvents[0].eventDate}
+                  {testEvents[`${testEvents.length-1}`].eventDate}
                 </Typography>
                 <Typography gutterBottom variant="h6" component="h2">
-                  {testEvents[0].name}
+                  {testEvents[`${testEvents.length-1}`].name}
                 </Typography>
               </FiCardContent>
             </FiCardActionArea>
