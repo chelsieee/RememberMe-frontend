@@ -7,14 +7,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link, useHistory } from "react-router-dom";
 
 
-
-// const options = [
-//   'MemoryCollection',
-//   'Home',
-//   'Register',
-//   'Login',
-// ];
-
 const ITEM_HEIGHT = 48;
 
 const useStyles = makeStyles((theme) => ({
@@ -43,11 +35,13 @@ const handleLogout =() =>{
     window.localStorage.clear()
     props.setLoginStatus({isLoggin:false})
     history.replace('/')
+    window.alert("GoodBye~")
 }
 
   return (
     <div className="menu" >
       <IconButton
+       style={{color: "#e3f2fd"}}
         aria-label="more"
         aria-controls="long-menu"
         aria-haspopup="true"
@@ -68,9 +62,9 @@ const handleLogout =() =>{
           },
         }}
       >
-          <MenuItem selected={'MemoryCollection'} onClick={handleClose}>
+        {!props.loginStatus.isLoggin && <MenuItem onClick={handleClose}>
           <Link to="/" style={{ textDecoration: 'none', color: "inherit" }}>Home</Link>
-          </MenuItem>
+          </MenuItem>}
           {props.loginStatus.isLoggin && <MenuItem onClick={handleClose}>
             <Link to="/events" style={{ textDecoration: 'none', color: "inherit" }}>MemoryCollection</Link>
           </MenuItem>}

@@ -38,7 +38,7 @@ import {
 
 const useStyles = makeStyles({
   root: {
-    // minWidth: 27,
+    minWidth: 27,
   },
   bullet: {
     display: "inline-block",
@@ -55,7 +55,7 @@ const useStyles = makeStyles({
   
   },
   media: {
-    height: 461,
+    height: "461",
   },
   fiCardContent: {
     color: "#ffffff",
@@ -119,12 +119,12 @@ export const EventList = (props) => {
             <AddIcon />
           </IconButton>
         </Link>
-        <IconButton>
-          <DeleteIcon onClick={() => props.handleDelete(checkList)} />
+        <IconButton onClick={() => props.handleDelete(checkList)}>
+          <DeleteIcon/>
         </IconButton>
       </div>
       {testEvents[0] && (
-        <Box width="100%" height="75%" className="cardContainer">
+        <Box width="100%" className="cardContainer">
           <FiCard className={classes.card}>
             <FiCardActionArea>
               <FiCardMedia
@@ -132,21 +132,22 @@ export const EventList = (props) => {
                 alt="sky"
                 image="https://images.unsplash.com/photo-1499980762202-04245017d5bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
                 title="background image"
+
               />
               <FiCardContent className={classes.fiCardContent}>
                 <Typography gutterBottom variant="h6" component="h2">
                   Days Since
                 </Typography>
-                <Typography variant="body2" component="p">
+                <Typography gutterBottom variant="h4" component="h2">
                   {testEvents[`${testEvents.length-1}`].title}
                 </Typography>
                 <Typography gutterBottom variant="h1" component="h2">
                   {difBtwDays(testEvents[`${testEvents.length-1}`].eventDate)}
                 </Typography>
-                <Typography variant="body2" component="p">
+                <Typography gutterBottom variant="body1" component="h2">
                   {testEvents[`${testEvents.length-1}`].eventDate}
                 </Typography>
-                <Typography gutterBottom variant="h6" component="h2">
+                <Typography gutterBottom variant="h4" component="h2">
                   {testEvents[`${testEvents.length-1}`].name}
                 </Typography>
               </FiCardContent>
@@ -183,7 +184,6 @@ export const EventList = (props) => {
                   el.eventDate
                 )} days`}
                 secondary={el.eventDate}
-                third={difBtwDays(el.eventDate)}
               />
               </Link>
             </ListItem>
