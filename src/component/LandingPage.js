@@ -13,7 +13,7 @@ const styles = {
     right: 0,
     bottom: 0,
     width: "100%",
-    backgroundImage: `url(${"https://farm5.staticflickr.com/4191/34378176550_faa7d67b12_k.jpg?momo_cache_bg_uuid=a6bc81c5-5d34-4aac-af2b-d78c8"})`,
+    backgroundImage: `url(${"https://images.unsplash.com/photo-1482160310982-3adf8b38daef?ixlib=rb-1.2.1&q=99&fm=jpg&crop=entropy&cs=tinysrgb&w=2048&fit=max&ixid=eyJhcHBfaWQiOjcwOTV9?momo_cache_bg_uuid="})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover"
   },
@@ -34,15 +34,14 @@ export const LandingPage = (props) => {
     <>
       <Paper style={styles.paperContainer}>
         <Typography
-          gutterBottom
-          variant="h4"
-          component="h4"
-          style={{ color: "white" }}
+          variant="h3"
+          component="h3"
+          style={{ color: "white", margin:"200px 200px 0 200px"}}
         >
-          <h1>{time()}</h1>
+          {time()}
         </Typography>
         <Typography
-          gutterBottom
+          // gutterBottom
           variant="h4"
           component="h4"
           style={{ color: "white" }}

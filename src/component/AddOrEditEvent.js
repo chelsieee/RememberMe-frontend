@@ -60,20 +60,21 @@ const useStyles = makeStyles((theme) => ({
 export const AddOrEditEvent = (props) => {
   const classes = useStyles();
 
-  const [event, setEvent] = useState({
-    title: "",
-    name: "",
-    eventDate: "",
-  });
+  console.log(props.event)
+  const [event, setEvent] = useState(props.event);
 
   const handleChange = (e) => {
+      console.log(e)
     let newEvent = { ...event };
     newEvent[e.target.name] = e.target.value;
     setEvent(newEvent);
   };
 
   const handleDateChange = (e) => {
-    let date = format(e, "yyyy-MM-dd");
+    console.log('e',e)
+    const dtDateOnly = new Date(e.valueOf() + e.getTimezoneOffset() * 60 * 1000);
+    console.log('dtdateonly', dtDateOnly)
+    let date = format(dtDateOnly, "yyyy-MM-dd");
     console.log("date", date);
     let newEvent = { ...event };
     newEvent.eventDate = date;
@@ -143,10 +144,12 @@ export const AddOrEditEvent = (props) => {
             </CardContent>
             <CardContent>
               <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <KeyboardDatePicker
+    
+             <KeyboardDatePicker
                   margin="normal"
+                  autoOk="false"
                   id="date-picker-dialog"
-                  //   label="Date"
+                    label="Date"
                   format="yyyy-MM-dd"
                   value={event.eventDate}
                   maxDate={new Date()}
@@ -174,25 +177,3 @@ export const AddOrEditEvent = (props) => {
     </div>
   );
 };
-
-{
-  /* <div>
-    <form onSubmit={handleSubmit}>
-        <label>
-            Title 
-            <input name ='title' type ="text" value ={event.title} placeholder="title" onChange={handleChange}></input>
-        </label>
-        <label>
-            with someone
-        <input name ='name' type ="text" value ={event.name} placeholder="his/her name" onChange={handleChange}></input>
-        </label>
-        <label>
-            Since
-        <input name ='eventDate' type ="date" value ={event.eventDate} onChange={handleChange}></input>
-        </label>
-        <label>
-            <button type="submit">&#10003;</button>
-        </label>
-    </form>
-</div> */
-}
