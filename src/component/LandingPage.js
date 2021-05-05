@@ -13,7 +13,7 @@ const styles = {
     right: 0,
     bottom: 0,
     width: "100%",
-    backgroundImage: `url(${"https://images.unsplash.com/photo-1482160310982-3adf8b38daef?ixlib=rb-1.2.1&q=99&fm=jpg&crop=entropy&cs=tinysrgb&w=2048&fit=max&ixid=eyJhcHBfaWQiOjcwOTV9?momo_cache_bg_uuid="})`,
+    backgroundImage: `url(${'https://images.unsplash.com/photo-1539139329395-ceb575183d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1268&q=80'})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover"
   },
