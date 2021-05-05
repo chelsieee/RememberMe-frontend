@@ -69,7 +69,7 @@ const handleLogout =() =>{
             <Link to="/events" style={{ textDecoration: 'none', color: "inherit" }}>MemoryCollection</Link>
           </MenuItem>}
          {!props.loginStatus.isLoggin && <MenuItem onClick={handleClose}>
-            <Link to="/users/new" style={{ textDecoration: 'none', color: "inherit" }}>Register</Link>
+            <Link to="/users/register" style={{ textDecoration: 'none', color: "inherit" }}>Register</Link>
           </MenuItem>}
           {!props.loginStatus.isLoggin && <MenuItem onClick={handleClose}>
             <Link to="/users/login" style={{ textDecoration: 'none', color: "inherit" }}>Login</Link>
