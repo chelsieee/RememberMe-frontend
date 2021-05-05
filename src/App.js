@@ -6,6 +6,7 @@ import { ListContainer } from "./controller/ListContainer";
 import { NewUserContainer } from "./controller/NewUserContainer";
 import { LoginContainer } from "./controller/LoginContainer";
 import {LandingPage} from './component/LandingPage'
+import {NavMenu} from './component/NavMenu'
 import { useEffect, useState } from "react";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <div className="App">
       <Router>
+        <NavMenu loginStatus={loginStatus} setLoginStatus={setLoginStatus}/>
         <Switch>
          {loginStatus.isLoggin && <Route path="/events/add">
             <AddContainer />
