@@ -72,9 +72,11 @@ export const AddOrEditEvent = (props) => {
     setEvent(newEvent);
   };
 
-  const handleDateChange = (e) => {
-    let date = format(e, "yyyy-MM-dd");
-    console.log("date", date);
+  const handleDateChange = (date) => {
+    // material ui doesn't like dates being passed in the react component in that format.
+    // disabling this makes it work manually or by selecting it
+    // let date = format(e, "yyyy-MM-dd");
+    // console.log("date", date);
     let newEvent = { ...event };
     newEvent.eventDate = date;
     setEvent(newEvent);
