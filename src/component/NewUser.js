@@ -13,6 +13,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import Paper from "@material-ui/core/Paper";
 
   
   const useStyles = makeStyles((theme) => ({
@@ -35,16 +36,31 @@ import Container from "@material-ui/core/Container";
       margin: theme.spacing(3, 0, 2)
     },
     root: {
-        backgroundImage: `url(https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ymx1ZXxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60)`,
-      
+        // backgroundImage: `url(https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ymx1ZXxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60)`,
+        background: "linear-gradient(45deg, #bbdefb 10%, #fafafa 90%)",
       backgroundRepeat: "no-repeat",
       backgroundColor:
         theme.palette.type === "light"
           ? theme.palette.grey[50]
           : theme.palette.grey[900],
       backgroundSize: "cover",
-      backgroundPosition: "center"
-    }
+      backgroundPosition: "center",
+      marginTop: "200px",
+      position: "flex",
+    },
+    paperContainer: {
+        zIndex: -1,
+        height: "100vh",
+        position: "absolute",
+        top: 0,
+        right: 0,
+        bottom: 0,
+        width: "100%",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundImage: `url(https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ymx1ZXxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60)`,
+        
+      },
   }));
 
 export const NewUser =(props)=>{
@@ -67,6 +83,7 @@ export const NewUser =(props)=>{
     }
 
     return (
+        <Paper className={classes.paperContainer}>
         <Container component="main" maxWidth="xs" className={classes.root}>
       <CssBaseline />
       <div className={classes.paper}>
@@ -134,6 +151,7 @@ export const NewUser =(props)=>{
       </div>
     
     </Container>
+    </Paper>
     )
 }
 
