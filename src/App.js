@@ -29,7 +29,7 @@ const App = () => {
           {loginStatus.isLoggin && <Route path="/events/edit/:id">
             <EditContainer />
           </Route>}
-          <Route path="/users/new" >
+          <Route path="/users/register" >
             <NewUserContainer />
           </Route>
           <Route path="/users/login" >

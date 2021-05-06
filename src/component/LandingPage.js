@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Image from "material-ui-image";
+// import classes from "*.module.css";
 
 const styles = {
   paperContainer: {
@@ -15,9 +16,12 @@ const styles = {
     width: "100%",
     backgroundImage: `url(${"https://farm5.staticflickr.com/4191/34378176550_faa7d67b12_k.jpg?momo_cache_bg_uuid=a6bc81c5-5d34-4aac-af2b-d78c8"})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover"
+    backgroundSize: "cover",
+    
   },
-}
+
+  }
+
 
 export const LandingPage = (props) => {
   const time = () => {
@@ -34,15 +38,14 @@ export const LandingPage = (props) => {
     <>
       <Paper style={styles.paperContainer}>
         <Typography
-          gutterBottom
-          variant="h4"
-          component="h4"
-          style={{ color: "white" }}
+          variant="h2"
+          component="h3"
+          style={{ color: "white", margin:"200px 200px 0 200px"}}
         >
-          <h1>{time()}</h1>
+          {time()}
         </Typography>
         <Typography
-          gutterBottom
+          // gutterBottom
           variant="h4"
           component="h4"
           style={{ color: "white" }}

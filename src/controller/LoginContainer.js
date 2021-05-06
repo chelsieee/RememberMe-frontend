@@ -13,6 +13,9 @@ const handleExistingUserSubmit =(user)=>{
      window.localStorage.setItem('token', JSON.stringify(res.data.token))
      props.setLoginStatus({isLoggin: true})
      history.replace("/events")
+   }).catch((error)=>{
+    console.log(error.response.data.message)
+    window.alert(error.response.data.message)
    })
 }
 

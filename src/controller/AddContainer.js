@@ -19,10 +19,16 @@ export const AddContainer =() =>{
 
    }
 
+   const initialState = {
+       title: "",
+       name: "",
+       eventDate: new Date()
+   }
+
     return(
        <>
        <div>
-           <AddOrEditEvent submit={handleEventFormSubmit}/>
+           <AddOrEditEvent submit={handleEventFormSubmit} event={initialState}/>
        </div>
        </> 
     )

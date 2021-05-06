@@ -9,9 +9,9 @@ export const EditContainer =() =>{
     const history = useHistory();
 
     const [editEvent, setEditEvent]=useState(
-       { title:'',
+       {title:'',
         name:'',
-        eventDate: ''}
+        eventDate: new Date()}
     )
 
    const handleEditEvent =(event)=>{
@@ -29,6 +29,7 @@ export const EditContainer =() =>{
    }
 
    useEffect (()=>{
+       console.log("do you see me")
       axios.get(`http://localhost:3000/api/events/${params.id}`, {
         "Access-Control-Allow-Credentials": true,
         headers:{
@@ -41,10 +42,11 @@ export const EditContainer =() =>{
 
    },[params.id])
 
+
     return(
        <>
        <div>
-           <AddOrEditEvent submit={handleEditEvent} event ={editEvent}/>
+           <AddOrEditEvent submit={handleEditEvent} event={editEvent}/>
        </div>
        </> 
     )
