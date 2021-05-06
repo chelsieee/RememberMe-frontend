@@ -52,14 +52,17 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
   card: {
+     height:"500px",
   
   },
   media: {
-    height: "461",
+    height: "500px",
+   
   },
   fiCardContent: {
     color: "#ffffff",
     backgroundColor: "rgba(0,0,0,.24)",
+    height: "500px",
   },
   fiCardContentTextSecondary: {
     color: "rgba(255,255,255,0.78)",
@@ -132,10 +135,9 @@ export const EventList = (props) => {
                 alt="sky"
                 image="https://images.unsplash.com/photo-1499980762202-04245017d5bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
                 title="background image"
-
-              />
+                className={classes.media}/>
               <FiCardContent className={classes.fiCardContent}>
-                <Typography gutterBottom variant="h6" component="h2">
+                <Typography gutterBottom variant="h6" component="h2" style={{marginTop: "60px"}}>
                   Days Since
                 </Typography>
                 <Typography gutterBottom variant="h4" component="h2">

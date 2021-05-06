@@ -19,7 +19,6 @@ import { format } from "date-fns";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // background: "linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)",
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.44)), url('https://images.unsplash.com/photo-1521080755838-d2311117f767?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2029&q=80')`,
     minWidth: "100%",
     minHeight: "100vh",
@@ -41,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     marginBottom: theme.spacing(3),
     marginLeft: theme.spacing(1),
-    minWidth: 500,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -55,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
   },
+  card:{
+    minWidth:"600px"
+  }
 }));
 
 export const AddOrEditEvent = (props) => {
