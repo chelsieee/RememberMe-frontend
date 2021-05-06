@@ -22,7 +22,7 @@ import Paper from "@material-ui/core/Paper";
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      height: "50vh",
+      height: "60vh",
     },
     avatar: {
       margin: theme.spacing(1),
