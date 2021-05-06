@@ -26,6 +26,8 @@ import Paper from "@material-ui/core/Paper";
     },
     avatar: {
       margin: theme.spacing(1),
+      height:"80px",
+      width:"80px",
       backgroundColor: theme.palette.secondary.main
     },
     form: {
@@ -81,8 +83,9 @@ export const LoginUser =(props)=>{
         <Container component="main" maxWidth="xs" className={classes.root} >
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+    
+        <Avatar className={classes.avatar} src="https://i.pinimg.com/originals/ee/0e/26/ee0e261dc56d4b03b93ccc29b6c94237.png">
+
         </Avatar>
         <Typography component="h1" variant="h5">
           Sign in

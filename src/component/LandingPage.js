@@ -14,9 +14,9 @@ const styles = {
     right: 0,
     bottom: 0,
     width: "100%",
-    backgroundImage: `url(${"https://farm5.staticflickr.com/4191/34378176550_faa7d67b12_k.jpg?momo_cache_bg_uuid=a6bc81c5-5d34-4aac-af2b-d78c8"})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    backgroundImage: "url(https://wallpapercave.com/wp/wp5429455.jpg)"
     
   },
 

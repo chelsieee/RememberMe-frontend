@@ -39,6 +39,7 @@ import {
 const useStyles = makeStyles({
   root: {
     minWidth: 27,
+    flexGrow: 1,
   },
   bullet: {
     display: "inline-block",
