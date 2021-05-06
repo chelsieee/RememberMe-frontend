@@ -64,18 +64,12 @@ export const AddOrEditEvent = (props) => {
   const [event, setEvent] = useState(props.event);
 
   const handleChange = (e) => {
-      console.log(e)
     let newEvent = { ...event };
     newEvent[e.target.name] = e.target.value;
     setEvent(newEvent);
   };
 
-  const handleDateChange = (e) => {
-    console.log('e',e)
-    const dtDateOnly = new Date(e.valueOf() + e.getTimezoneOffset() * 60 * 1000);
-    console.log('dtdateonly', dtDateOnly)
-    let date = format(dtDateOnly, "yyyy-MM-dd");
-    console.log("date", date);
+  const handleDateChange = (date) => {
     let newEvent = { ...event };
     newEvent.eventDate = date;
     setEvent(newEvent);
