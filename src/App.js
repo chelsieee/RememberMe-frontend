@@ -8,6 +8,8 @@ import { LoginContainer } from "./controller/LoginContainer";
 import {LandingPage} from './component/LandingPage'
 import {NavMenu} from './component/NavMenu'
 import { useEffect, useState } from "react";
+import {theme} from "./material-ui/theme"
+import { ThemeProvider } from '@material-ui/core/styles';
 
 const App = () => {
   const [loginStatus, setLoginStatus] = useState({ isLoggin: false });
@@ -19,6 +21,7 @@ const App = () => {
     },[]);
 
   return (
+    <ThemeProvider theme={theme} >
     <div className="App">
       <Router>
         <NavMenu loginStatus={loginStatus} setLoginStatus={setLoginStatus}/>
@@ -44,6 +47,8 @@ const App = () => {
         </Switch>
       </Router>
     </div>
+    </ThemeProvider>
+
   );
 };
 

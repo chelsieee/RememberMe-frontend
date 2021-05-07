@@ -42,10 +42,10 @@ export const FiCardMedia = withStyles({
   }
 })(CardMedia);
 
-export default {
-  FiCard,
-  FiCardActionArea,
-  FiCardActions,
-  FiCardContent,
-  FiCardMedia
-};
+// export default {
+//   FiCard,
+//   FiCardActionArea,
+//   FiCardActions,
+//   FiCardContent,
+//   FiCardMedia
+// };

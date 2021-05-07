@@ -9,5 +9,11 @@ export const theme = createMuiTheme({
     },
     background: {
         default: "#fff"
-    }
+    },
+    typography: {
+    
+        fontFamily:  "sans-serif",
+        
+        
+      },
 })
