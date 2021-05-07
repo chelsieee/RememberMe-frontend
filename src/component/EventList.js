@@ -1,29 +1,16 @@
 import moment from "moment";
-import { withStyles } from "@material-ui/core/styles";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import Box from "@material-ui/core/Box";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardMedia from "@material-ui/core/CardMedia";
-import { sizing } from "@material-ui/system";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
-import ImageIcon from "@material-ui/icons/Image";
-import WorkIcon from "@material-ui/icons/Work";
-import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 import { theme } from "../material-ui/theme";
-import Icon from "@material-ui/core/Icon";
 import AddIcon from "@material-ui/icons/Add";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -31,7 +18,6 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import {
   FiCard,
   FiCardActionArea,
-  FiCardActions,
   FiCardContent,
   FiCardMedia,
 } from "../material-ui/FullImageCard";
@@ -73,11 +59,12 @@ const useStyles = makeStyles({
     
     backgroundColor: theme.palette.background,
   },
+
+ 
 });
 
 export const EventList = (props) => {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
   const [checkList, setCheckList] = useState([]);
   const testEvents = props.events.map((el) => {
     return { ...el, checked: false };
@@ -119,11 +106,11 @@ export const EventList = (props) => {
     <div>
       <div className='buttons'>
         <Link to={"/events/add"}>
-          <IconButton>
+          <IconButton style={{color:"#e3f2fd"}}>
             <AddIcon />
           </IconButton>
         </Link>
-        <IconButton onClick={() => props.handleDelete(checkList)}>
+        <IconButton style={{color:"#e3f2fd"}} onClick={() => props.handleDelete(checkList)}>
           <DeleteIcon/>
         </IconButton>
       </div>
@@ -138,8 +125,8 @@ export const EventList = (props) => {
                 title="background image"
                 className={classes.media}/>
               <FiCardContent className={classes.fiCardContent}>
-                <Typography gutterBottom variant="h6" component="h2" style={{marginTop: "60px"}}>
-                  Days Since
+                <Typography gutterBottom variant="h6" component="h2" style={{marginTop: "60px"}} >
+                  DAYS SINCE
                 </Typography>
                 <Typography gutterBottom variant="h4" component="h2">
                   {testEvents[`${testEvents.length-1}`].title}
@@ -169,8 +156,6 @@ export const EventList = (props) => {
           >
             <ListItem button>
               <ListItemAvatar>
-                <Avatar>
-                  <BeachAccessIcon />
                   <input
                     type="checkbox"
                     id={el.id}
@@ -178,7 +163,6 @@ export const EventList = (props) => {
                     onClick={handleClick}
                     value={el.checked}
                   />
-                </Avatar>
               </ListItemAvatar>
               <Link to={`/events/edit/${el.id}`}  style={{ textDecoration: 'none', color: "inherit" }}>
               <ListItemText

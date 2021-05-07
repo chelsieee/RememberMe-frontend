@@ -1,9 +1,7 @@
 import moment from "moment";
-import { Link } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import Image from "material-ui-image";
-// import classes from "*.module.css";
+
 
 const styles = {
   paperContainer: {
@@ -41,7 +39,7 @@ export const LandingPage = (props) => {
         <Typography
           variant="h2"
           component="h3"
-          style={{ color: "white", margin:"200px 200px 0 200px"}}
+          style={{ color: "white", margin:"200px 200px 0 200px", fontFamily: "fantasy"}}
         >
           {time()}
         </Typography>
@@ -49,9 +47,9 @@ export const LandingPage = (props) => {
           // gutterBottom
           variant="h4"
           component="h4"
-          style={{ color: "white" }}
+          style={{ color: "white", fontFamily: "fantasy" }}
         >
-          <h1>Hi _____,</h1>
+          <h1>Hi Pal,</h1>
           do you still remember that moment?
         </Typography>
       </Paper>

@@ -3,23 +3,14 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { Link, useHistory } from "react-router-dom";
 
 
 const ITEM_HEIGHT = 48;
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      '& > span': {
-        margin: theme.spacing(2),
-      },
-    },
-  }));
 
 export const NavMenu= (props)=> {
   const history = useHistory();
-  const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
