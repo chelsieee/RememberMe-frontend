@@ -39,12 +39,10 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
   card: {
-     height:"500px",
-  
+    height: "500px",
   },
   media: {
     height: "500px",
-   
   },
   fiCardContent: {
     color: "#ffffff",
@@ -56,11 +54,9 @@ const useStyles = makeStyles({
   },
   listRoot: {
     width: "100%",
-    
+
     backgroundColor: theme.palette.background,
   },
-
- 
 });
 
 export const EventList = (props) => {
@@ -104,14 +100,17 @@ export const EventList = (props) => {
 
   return (
     <div>
-      <div className='buttons'>
+      <div className="buttons">
         <Link to={"/events/add"}>
-          <IconButton style={{color:"#e3f2fd"}}>
+          <IconButton style={{ color: "#e3f2fd" }}>
             <AddIcon />
           </IconButton>
         </Link>
-        <IconButton style={{color:"#e3f2fd"}} onClick={() => props.handleDelete(checkList)}>
-          <DeleteIcon/>
+        <IconButton
+          style={{ color: "#e3f2fd" }}
+          onClick={() => props.handleDelete(checkList)}
+        >
+          <DeleteIcon />
         </IconButton>
       </div>
       {testEvents[0] && (
@@ -123,22 +122,28 @@ export const EventList = (props) => {
                 alt="sky"
                 image="https://images.unsplash.com/photo-1499980762202-04245017d5bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
                 title="background image"
-                className={classes.media}/>
+                className={classes.media}
+              />
               <FiCardContent className={classes.fiCardContent}>
-                <Typography gutterBottom variant="h6" component="h2" style={{marginTop: "60px"}} >
+                <Typography
+                  gutterBottom
+                  variant="h6"
+                  component="h2"
+                  style={{ marginTop: "60px" }}
+                >
                   DAYS SINCE
                 </Typography>
                 <Typography gutterBottom variant="h4" component="h2">
-                  {testEvents[`${testEvents.length-1}`].title}
+                  {testEvents[`${testEvents.length - 1}`].title}
                 </Typography>
                 <Typography gutterBottom variant="h1" component="h2">
-                  {difBtwDays(testEvents[`${testEvents.length-1}`].eventDate)}
+                  {difBtwDays(testEvents[`${testEvents.length - 1}`].eventDate)}
                 </Typography>
                 <Typography gutterBottom variant="body1" component="h2">
-                  {testEvents[`${testEvents.length-1}`].eventDate}
+                  {testEvents[`${testEvents.length - 1}`].eventDate}
                 </Typography>
                 <Typography gutterBottom variant="h4" component="h2">
-                  {testEvents[`${testEvents.length-1}`].name}
+                  {testEvents[`${testEvents.length - 1}`].name}
                 </Typography>
               </FiCardContent>
             </FiCardActionArea>
@@ -147,7 +152,6 @@ export const EventList = (props) => {
       )}
       <Grid>
         {testEvents.map((el, index) => (
-          
           <List
             key={index}
             component="nav"
@@ -156,27 +160,29 @@ export const EventList = (props) => {
           >
             <ListItem button>
               <ListItemAvatar>
-                  <input
-                    type="checkbox"
-                    id={el.id}
-                    key={el.id}
-                    onClick={handleClick}
-                    value={el.checked}
-                  />
+                <input
+                  type="checkbox"
+                  id={el.id}
+                  key={el.id}
+                  onClick={handleClick}
+                  value={el.checked}
+                />
               </ListItemAvatar>
-              <Link to={`/events/edit/${el.id}`}  style={{ textDecoration: 'none', color: "inherit" }}>
-              <ListItemText
-                key={el.id}
-                primary={`${el.title} with ${el.name} for ${difBtwDays(
-                  el.eventDate
-                )} days`}
-                secondary={el.eventDate}
-              />
+              <Link
+                to={`/events/edit/${el.id}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <ListItemText
+                  key={el.id}
+                  primary={`${el.title} with ${el.name} for ${difBtwDays(
+                    el.eventDate
+                  )} days`}
+                  secondary={el.eventDate}
+                />
               </Link>
             </ListItem>
             <Divider variant="inset" component="li" />
           </List>
-            
         ))}
       </Grid>
     </div>

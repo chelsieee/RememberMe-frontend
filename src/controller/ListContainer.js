@@ -40,8 +40,10 @@ export const ListContainer = () => {
       })
       .then((res) => {
         console.log(" Data:", res);
-        const sortedData = res.data.sort(function(a,b) {return new Date(a.eventDate) - new Date(b.eventDate)})
-        console.log('sorted data', sortedData)
+        const sortedData = res.data.sort(function (a, b) {
+          return new Date(a.eventDate) - new Date(b.eventDate);
+        });
+        console.log("sorted data", sortedData);
         setEventList(sortedData);
       });
   };

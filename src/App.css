@@ -37,25 +37,23 @@
   }
 }
 
-.menu{
+.menu {
   position: fixed;
   left: 0;
 }
 
 .buttons {
-  position:fixed;
-  right:0;
+  position: fixed;
+  right: 0;
 }
 
 .cardContainer {
   position: relative;
-    top: -10px;
-    z-index: -1;
-  
+  top: -10px;
+  z-index: -1;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   transform: scale(1.5);
-  filter: grayscale(1)
+  filter: grayscale(1);
 }
-

@@ -8,28 +8,27 @@ import withStyles from "@material-ui/core/styles/withStyles";
 export const FiCard = withStyles({
   root: {
     position: "relative",
-    height:"100%"
-  }
+    height: "100%",
+  },
 })(Card);
 
 export const FiCardActionArea = withStyles({
   root: {
-    position: "relative"
-  }
+    position: "relative",
+  },
 })(CardActionArea);
 
 export const FiCardActions = withStyles({
   root: {
-    position: "relative"
-  }
+    position: "relative",
+  },
 })(CardActions);
 
 export const FiCardContent = withStyles({
   root: {
     position: "relative",
     backgroundColor: "transparent",
-    
-  }
+  },
 })(CardContent);
 
 export const FiCardMedia = withStyles({
@@ -38,8 +37,8 @@ export const FiCardMedia = withStyles({
     top: 0,
     right: 0,
     height: "100%",
-    width: "100%"
-  }
+    width: "100%",
+  },
 })(CardMedia);
 
 // export default {
