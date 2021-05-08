@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    height: "55vh",
+    height: "70vh",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
   root: {
-    marginTop: "200px",
+    marginTop: "120px",
     position: "flex",
     background: "linear-gradient(45deg, #bbdefb 10%, #fafafa 90%)",
   },

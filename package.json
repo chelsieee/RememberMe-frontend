@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "date-fns": "^2.21.1",
+    "date-fns-timezone": "^0.1.4",
     "material-ui-icons": "^1.0.0-beta.36",
     "material-ui-image": "^3.3.2",
     "moment": "^2.29.1",

@@ -18,7 +18,7 @@ import Paper from "@material-ui/core/Paper";
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      height: "60vh",
+      height: "70vh",
     },
     avatar: {
       margin: theme.spacing(1),
@@ -42,7 +42,7 @@ import Paper from "@material-ui/core/Paper";
           : theme.palette.grey[900],
       backgroundSize: "cover",
       backgroundPosition: "center",
-      marginTop: "200px",
+      marginTop: "120px",
       position: "flex",
     },
     paperContainer: {

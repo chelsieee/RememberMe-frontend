@@ -16,7 +16,6 @@ export const AddContainer =() =>{
         console.log("addEvent response:", res);
         history.replace('/events')
        })
-
    }
 
    const initialState = {
