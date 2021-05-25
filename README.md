@@ -19,8 +19,9 @@ Inspired by the Mexican holiday Day of the Dead, I created a full-stack applicat
 https://user-images.githubusercontent.com/75514149/119506108-f0fdf100-bdb0-11eb-8494-068eef341ada.mov
 
 ### Screenshots
-![Example screenshot](/image.js/landingpage.png)
-![Example screenshot](/image.js/homepage.png)
+![Example screenshot](image/landingPage.png)
+![Example screenshot](image/eventPage.png)
+
 
 
 ## Technologies
