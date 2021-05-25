@@ -1,5 +1,7 @@
 # rememberMe
 > A full-stack application that traces back to the past and the people who spent that special moment with you
+> 
+> backend repo: https://github.com/chelsieee/RememberMe-BE
 
 ## Table of contents
 * [General info](#general-info)
