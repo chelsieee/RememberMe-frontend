@@ -17,7 +17,7 @@ export const EditContainer = () => {
   const handleEditEvent = (event) => {
     console.log("editEvent", event);
     axios
-      .patch(`http://localhost:3000/api/events/${params.id}`, event, {
+      .patch(`https://rememberme-countdown.herokuapp.com/api/events/${params.id}`, event, {
         "Access-Control-Allow-Credentials": true,
         headers: {
           token: window.localStorage.getItem("token"),
@@ -32,7 +32,7 @@ export const EditContainer = () => {
   useEffect(() => {
     console.log("do you see me");
     axios
-      .get(`http://localhost:3000/api/events/${params.id}`, {
+      .get(`https://rememberme-countdown.herokuapp.com/api/events/${params.id}`, {
         "Access-Control-Allow-Credentials": true,
         headers: {
           token: window.localStorage.getItem("token"),

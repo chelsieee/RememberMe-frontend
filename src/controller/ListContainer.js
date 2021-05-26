@@ -13,7 +13,7 @@ export const ListContainer = () => {
 
     events.forEach((e) => {
       axios
-        .delete(`http://localhost:3000/api/events/${e}`, {
+        .delete(`https://rememberme-countdown.herokuapp.com/api/events/${e}`, {
           "Access-Control-Allow-Credentials": true,
           headers: {
             token: window.localStorage.getItem("token"),
@@ -32,7 +32,7 @@ export const ListContainer = () => {
 
   const refreshList = () => {
     axios
-      .get("http://localhost:3000/api/events", {
+      .get("https://rememberme-countdown.herokuapp.com/api/events", {
         "Access-Control-Allow-Credentials": true,
         headers: {
           token: window.localStorage.getItem("token"),

@@ -6,7 +6,7 @@ export const LoginContainer = (props) => {
 
   const handleExistingUserSubmit = (user) => {
     axios
-      .post("http://localhost:3000/api/auth/login", user, {
+      .post("https://rememberme-countdown.herokuapp.com/api/auth/login", user, {
         "Access-Control-Allow-Credentials": true,
       })
       .then((res) => {
