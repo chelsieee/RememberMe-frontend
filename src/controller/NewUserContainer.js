@@ -8,7 +8,7 @@ export const NewUserContainer = () => {
   const handleNewUserSubmit = (user) => {
     console.log(user);
     axios
-      .post("http://localhost:3000/api/users", user, {
+      .post("https://rememberme-countdown.herokuapp.com/api/users", user, {
         "Access-Control-Allow-Credentials": true,
       })
       .then((res) => {
