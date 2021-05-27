@@ -1,6 +1,7 @@
 # rememberMe
 > A full-stack application that traces back to the past and the people who spent that special moment with you
 > 
+> Deployed at: https://rememberme-app.herokuapp.com/
 > backend repo: https://github.com/chelsieee/RememberMe-BE
 
 ## Table of contents
